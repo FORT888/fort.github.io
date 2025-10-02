@@ -5,26 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的一站式导航</title>
   <style>
-    body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px; margin: 0; }
-    h1 { color: #333; text-align: center; margin-bottom: 30px; }
+    body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 10px; margin: 0; }
+    h1 { color: #333; text-align: center; margin-bottom: 20px; font-size: 24px; }
 
     /* 标签切换按钮 */
     .tab {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 20px;
-      gap: 10px;
+      margin-bottom: 15px;
+      gap: 5px;
     }
     .tab button {
-      padding: 12px 24px;
-      font-size: 18px;
+      padding: 10px 16px;
+      font-size: 16px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       background-color: #0066cc;
       color: #fff;
       transition: background-color 0.3s;
+      flex: 1 1 30%; /* 自动换行适应手机屏幕 */
+      min-width: 90px;
+      text-align: center;
     }
     .tab button.active, .tab button:hover {
       background-color: #004999;
@@ -34,36 +37,40 @@
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    .nav-section { background-color: #fff; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
-    h2 { color: #444; margin-top: 0; }
-    p { font-size: 16px; line-height: 1.5; }
+    .nav-section { background-color: #fff; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
+    h2 { color: #444; margin-top: 0; font-size: 20px; }
+    p { font-size: 16px; line-height: 1.5; margin-bottom: 10px; }
+    
     .btn {
-      display: inline-block;
-      padding: 8px 16px;   /* 按钮小一些 */
-      margin: 5px 5px 10px 0;
-      font-size: 16px;     /* 按钮字体 */
+      display: block;
+      width: 100%; /* 手机屏幕自适应宽度 */
+      padding: 10px 0;
+      margin: 5px 0;
+      font-size: 16px;
       color: #fff;
       background-color: #0066cc;
       border: none;
       border-radius: 5px;
       text-decoration: none;
+      text-align: center;
       cursor: pointer;
       transition: background-color 0.3s;
     }
     .btn:hover { background-color: #004999; }
 
-    img { max-width: 100%; height: auto; margin-top: 10px; }
+    img { max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px; }
     .tutorial-step {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      width: 100%;
     }
     .tutorial-step p {
-      font-size: 18px;
-      line-height: 1.6;  
+      font-size: 16px;
+      line-height: 1.5;  
       text-align: center;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
       white-space: pre-line; /* 保持换行 */
     }
   </style>
@@ -146,7 +153,6 @@
       <img src="images/lengqianbao1.png" alt="下载 imToken">
     </div>
 
-    <!-- 按钮 -->
     <a href="https://m.bigplayers.com/detail/303?inviteCode=B0004609" target="_blank" class="btn">购买海外ID</a>
     <a href="https://www.any2388.com/#/installGuide" target="_blank" class="btn">免费获取海外ID</a>
   </div>

@@ -5,29 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的一站式导航</title>
   <style>
-    body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 10px; margin: 0; }
-    h1 { color: #333; text-align: center; margin-bottom: 20px; font-size: 24px; }
+    body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px; margin: 0; }
+    h1 { color: #333; text-align: center; margin-bottom: 30px; }
 
     /* 标签切换按钮 */
     .tab {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 15px;
-      gap: 5px;
+      margin-bottom: 20px;
+      gap: 10px;
     }
     .tab button {
-      padding: 10px 16px;
-      font-size: 16px;
+      padding: 12px 24px;
+      font-size: 18px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       background-color: #0066cc;
       color: #fff;
       transition: background-color 0.3s;
-      flex: 1 1 30%; /* 自动换行适应手机屏幕 */
-      min-width: 90px;
-      text-align: center;
     }
     .tab button.active, .tab button:hover {
       background-color: #004999;
@@ -37,142 +34,153 @@
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    .nav-section { background-color: #fff; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
-    h2 { color: #444; margin-top: 0; font-size: 20px; }
-    p { font-size: 16px; line-height: 1.5; margin-bottom: 10px; }
-    
+    .nav-section { background-color: #fff; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+    h2 { color: #444; margin-top: 0; }
+    p { font-size: 18px; line-height: 1.6; }
     .btn {
-      display: block;
-      width: 100%; /* 手机屏幕自适应宽度 */
-      padding: 10px 0;
-      margin: 5px 0;
+      display: inline-block;
+      padding: 8px 16px;
+      margin: 5px 5px 10px 0;
       font-size: 16px;
       color: #fff;
       background-color: #0066cc;
       border: none;
       border-radius: 5px;
       text-decoration: none;
-      text-align: center;
       cursor: pointer;
       transition: background-color 0.3s;
     }
     .btn:hover { background-color: #004999; }
-
-    img { max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px; }
+    img { max-width: 100%; height: auto; margin-top: 10px; }
     .tutorial-step {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .tutorial-step img {
+      max-width: 600px;
       width: 100%;
     }
     .tutorial-step p {
-      font-size: 16px;
-      line-height: 1.5;  
+      font-size: 18px;
+      line-height: 1.6;  
       text-align: center;
-      margin-bottom: 5px;
-      white-space: pre-line; /* 保持换行 */
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
 
-<h1>我的一站式导航</h1>
+  <h1>我的一站式导航</h1>
 
-<!-- 标签切换 -->
-<div class="tab">
-  <button class="tablinks active" onclick="openTab(event,'accelerator')">加速器教程</button>
-  <button class="tablinks" onclick="openTab(event,'telegram')">Telegram下载</button>
-  <button class="tablinks" onclick="openTab(event,'appleid')">苹果手机海外ID教程</button>
-</div>
-
-<!-- ===== 导航1：加速器教程 ===== -->
-<div id="accelerator" class="tab-content active">
-  <div class="nav-section">
-    <h2>购买加速器教程</h2>
-    <p>先准备一台备用机，然后操作以下步骤：</p>
-    <a href="https://www.any81.com" target="_blank" class="btn">点击这里下载推荐加速器</a>
-    <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">点击这里直接安装</a>
+  <!-- 标签切换 -->
+  <div class="tab">
+    <button class="tablinks active" onclick="openTab(event,'accelerator')">加速器教程</button>
+    <button class="tablinks" onclick="openTab(event,'telegram')">Telegram下载</button>
+    <button class="tablinks" onclick="openTab(event,'appleid')">苹果手机海外ID教程</button>
   </div>
-  <div class="nav-section">
-    <h2>示例图片和说明</h2>
 
-    <div class="tutorial-step">
-      <p>1. 点击右上角三条横线</p>
-      <img src="images/jiasuqi1.png" alt="步骤1">
+  <!-- ===== 导航1：加速器教程 ===== -->
+  <div id="accelerator" class="tab-content active">
+    <div class="nav-section">
+      <h2>购买加速器教程</h2>
+      <p>先准备一台备用机，然后操作以下步骤：</p>
+      <a href="https://www.any81.com" target="_blank" class="btn">点击这里下载推荐加速器</a>
+      <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">点击这里直接安装</a>
     </div>
-    <div class="tutorial-step">
-      <p>2. 点击下载</p>
-      <img src="images/jiasuqi2.png" alt="步骤2">
-    </div>
-    <div class="tutorial-step">
-      <p>3. 选择自己的手机型号，苹果选择 iOS，安卓选择 Android</p>
-      <img src="images/jiasuqi3.png" alt="步骤3">
+
+    <div class="nav-section">
+      <h2>示例图片和说明</h2>
+      <p>按照以下步骤完成加速器安装：</p>
+
+      <div class="tutorial-step">
+        <img src="images/jiasuqi1.png" alt="步骤1：点击右上角三条横线">
+        <p>步骤1：点击右上角三条横线</p>
+      </div>
+
+      <div class="tutorial-step">
+        <img src="images/jiasuqi2.png" alt="步骤2：点击下载">
+        <p>步骤2：点击下载</p>
+      </div>
+
+      <div class="tutorial-step">
+        <img src="images/jiasuqi3.png" alt="步骤3：选择自己的手机型号">
+        <p>步骤3：选择自己的手机型号，苹果选择 iOS，安卓选择 Android</p>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ===== 导航2：Telegram下载 ===== -->
-<div id="telegram" class="tab-content">
-  <div class="nav-section">
-    <h2>Telegram（纸飞机下载与购买）</h2>
-    <p>点击下面按钮下载或购买 Telegram：</p>
-    <a href="https://telegram.org/" target="_blank" class="btn">下载飞机</a>
-    <a href="https://f12580.com/" target="_blank" class="btn">购买飞机</a>
+  <!-- ===== 导航2：Telegram下载 ===== -->
+  <div id="telegram" class="tab-content">
+    <div class="nav-section">
+      <h2>Telegram（纸飞机下载与购买）</h2>
+      <p>点击下面按钮下载或购买 Telegram：</p>
+      <a href="https://telegram.org/" target="_blank" class="btn">下载飞机</a>
+      <a href="https://f12580.com/" target="_blank" class="btn">购买飞机</a>
+    </div>
   </div>
-</div>
 
-<!-- ===== 导航3：苹果手机海外ID教程 ===== -->
-<div id="appleid" class="tab-content">
-  <div class="nav-section">
-    <h2>苹果手机海外ID教程</h2>
-    <p>购买海外账号通常更容易登录且更稳定；免费的账号则存在登录失败的风险。购买海外 Apple ID 后，在手机的 App Store 使用该账号登录；登录成功后即可下载下列应用，所有应用均可通过该海外 ID 下载，操作简便可靠。</p>
+  <!-- ===== 导航3：苹果手机海外ID教程 ===== -->
+  <div id="appleid" class="tab-content">
+    <div class="nav-section">
+      <h2>苹果手机海外ID教程</h2>
+      <p>购买海外账号通常更容易登录且更稳定；免费的账号则存在登录失败的风险。购买海外 Apple ID 后，在手机的 App Store 使用该账号登录；登录成功后即可下载下列应用，所有应用均可通过该海外 ID 下载，操作简便可靠。</p>
 
-    <div class="tutorial-step">
-      <p>1. 下载聊天软件<br>在 App Store 搜索 Telegram 并下载</p>
-      <img src="images/feiji1.png" alt="下载 Telegram">
-    </div>
-    <div class="tutorial-step">
-      <p>2. 下载加速器<br>在 App Store 搜索 Anycast 并下载</p>
-      <img src="images/vpn1.png" alt="下载 Anycast">
-    </div>
-    <div class="tutorial-step">
-      <p>3. 下载浏览器<br>在 App Store 搜索 Google Chrome 并下载</p>
-      <img src="images/liulanqi1.png" alt="下载 Google Chrome">
-    </div>
-    <div class="tutorial-step">
-      <p>4. 下载备用浏览器<br>在 App Store 搜索 Egdg 并下载</p>
-      <img src="images/liulanqi2.png" alt="下载 Egdg">
-    </div>
-    <div class="tutorial-step">
-      <p>5. 下载数字钱包<br>在 App Store 搜索欧易或 OKX 并下载，Binance（币安也可作为备用）</p>
-      <img src="images/oyyi1.png" alt="下载欧易/OKX">
-    </div>
-    <div class="tutorial-step">
-      <p>6. 下载冷钱包<br>在 App Store 搜索 imToken 并下载（冷钱包，可下载备用）</p>
-      <img src="images/lengqianbao1.png" alt="下载 imToken">
-    </div>
+      <!-- 步骤1 -->
+      <div class="tutorial-step">
+        <p>1. 下载聊天软件<br>在 App Store 搜索 Telegram 并下载</p>
+        <img src="images/feiji1.png" alt="下载 Telegram">
+      </div>
 
-    <a href="https://m.bigplayers.com/detail/303?inviteCode=B0004609" target="_blank" class="btn">购买海外ID</a>
-    <a href="https://www.any2388.com/#/installGuide" target="_blank" class="btn">免费获取海外ID</a>
+      <!-- 步骤2 -->
+      <div class="tutorial-step">
+        <p>2. 下载加速器<br>在 App Store 搜索 Anycast 并下载</p>
+        <img src="images/vpn1.png" alt="下载 Anycast">
+      </div>
+
+      <!-- 步骤3 + 第4张合并 -->
+      <div class="tutorial-step">
+        <p>3. 下载浏览器<br>在 App Store 搜索 Google Chrome 并下载，搜索 Egdg 浏览器并下载（可作为备用浏览器）</p>
+        <img src="images/liulanqi1.png" alt="下载浏览器">
+        <img src="images/liulanqi2.png" alt="下载备用浏览器">
+      </div>
+
+      <!-- 步骤5 -->
+      <div class="tutorial-step">
+        <p>4. 下载数字钱包<br>在 App Store 搜索欧易或 OKX 并下载，Binance（币安也可作为备用）</p>
+        <img src="images/ouyi1.png" alt="下载欧易/OKX">
+      </div>
+
+      <!-- 步骤6 -->
+      <div class="tutorial-step">
+        <p>5. 下载冷钱包<br>在 App Store 搜索 imToken 并下载（冷钱包，可下载备用）</p>
+        <img src="images/lengqianbao1.png" alt="下载 imToken">
+      </div>
+
+      <!-- 底部两个按钮并排 -->
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+        <a href="https://m.bigplayers.com/detail/303?inviteCode=B0004609" target="_blank" class="btn" style="flex: 1;">购买海外ID</a>
+        <a href="https://www.any2388.com/#/installGuide" target="_blank" class="btn" style="flex: 1;">免费获取海外ID</a>
+      </div>
+    </div>
   </div>
-</div>
 
-<script>
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.remove("active");
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active");
-  }
-  document.getElementById(tabName).classList.add("active");
-  evt.currentTarget.classList.add("active");
-}
-</script>
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
 
 </body>
 </html>

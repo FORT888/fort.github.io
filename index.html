@@ -26,6 +26,17 @@
     }
     .btn:hover { background-color: #004999; }
     img { max-width: 100%; height: auto; margin-top: 10px; }
+    /* 横向排列图片 */
+    .tutorial-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .tutorial-step img {
+      max-width: 600px;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -54,16 +65,23 @@
     <p>按照以下步骤完成加速器安装：</p>
 
     <!-- 步骤 1 -->
-    <img src="images/加速器1.png" alt="步骤1：下载加速器">
-    <p>步骤1：在备用机上下载推荐加速器 APK 文件。</p>
+    <div class="tutorial-step">
+      <img src="images/jiasuqi1.png" alt="步骤1：点击右上角三条横线">
+      <p>步骤1：点击右上角三条横线</p>
+    </div>
 
     <!-- 步骤 2 -->
-    <img src="images/加速器2.png" alt="步骤2：安装加速器">
-    <p>步骤2：点击下载的 APK 文件进行安装，允许必要权限。</p>
+    <div class="tutorial-step">
+      <img src="images/jiasuqi2.png" alt="步骤2：点击下载">
+      <p>步骤2：点击下载</p>
+    </div>
 
     <!-- 步骤 3 -->
-    <img src="images/加速器3.png" alt="步骤3：完成设置">
-    <p>步骤3：打开加速器，进入设置界面，完成网络加速器配置。</p>
+    <div class="tutorial-step">
+      <img src="images/jiasuqi3.png" alt="步骤3：选择自己的手机型号">
+      <p>步骤3：选择自己的手机型号，苹果选择 iOS，安卓选择 Android</p>
+    </div>
+
   </div>
 
   <!-- ===== 分类 3 ===== -->
@@ -78,3 +96,4 @@
 
 </body>
 </html>
+

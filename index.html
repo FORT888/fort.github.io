@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>聯信資財富導航</title>
+  <title>我的一站式导航</title>
   <style>
     body { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; }
 
-    /* ===== 顶部背景 + 滚动文字 + logo ===== */
+    /* 顶部背景 + 滚动文字 + logo */
     .top-background {
       background: url('images/beijing.png') no-repeat center/cover;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: 10px 20px;
+      padding: 20px 10px;
       height: 180px;
       position: relative;
       overflow: hidden;
@@ -25,6 +25,7 @@
       overflow: hidden;
       mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      margin-bottom: 20px;
     }
 
     .scroll-title {
@@ -46,21 +47,18 @@
     }
 
     .logo {
-      height: 140px; /* 放大 logo */
-      margin-top: 10px;
+      height: 140px;
       z-index: 2;
     }
 
-    /* ===== 标签切换 ===== */
+    /* 标签切换按钮 */
     .tab {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 20px 0;
+      margin: 10px 0;
       gap: 10px;
-      padding: 0 10px;
     }
-
     .tab button {
       padding: 8px 16px;
       font-size: 16px;
@@ -71,26 +69,18 @@
       color: #fff;
       transition: background-color 0.3s;
     }
-    .tab button.active, .tab button:hover {
-      background-color: #004999;
-    }
+    .tab button.active, .tab button:hover { background-color: #004999; }
 
-    .tab-content { display: none; padding: 0 10px; }
+    /* 内容区 */
+    .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    .nav-section {
-      background-color: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
+    .nav-section { background-color: #fff; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
     h2 { color: #444; margin-top: 0; }
-    p { font-size: 18px; line-height: 1.5; }
+    p { font-size: 18px; line-height: 1.6; }
     .btn {
       display: inline-block;
-      padding: 8px 16px;   /* 按钮小一些 */
+      padding: 8px 16px;
       margin: 5px 5px 10px 0;
       font-size: 16px;
       color: #fff;
@@ -103,27 +93,15 @@
     }
     .btn:hover { background-color: #004999; }
 
-    .tutorial-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .tutorial-step img {
-      max-width: 600px;
-      width: 100%;
-    }
-    .tutorial-step p {
-      font-size: 18px;
-      line-height: 1.6;  
-      text-align: center;
-      margin-top: 8px;
-    }
+    img { max-width: 100%; height: auto; margin-top: 10px; }
+    .tutorial-step { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
+    .tutorial-step img { max-width: 600px; width: 100%; }
+    .tutorial-step p { font-size: 18px; line-height: 1.6; text-align: center; margin-top: 8px; }
   </style>
 </head>
 <body>
 
-  <!-- ===== 顶部背景 + 滚动文字 + logo ===== -->
+  <!-- 顶部背景、滚动文字、logo -->
   <div class="top-background">
     <div class="scroll-title-wrapper">
       <div class="scroll-title">聯信資財富導航</div>
@@ -131,7 +109,7 @@
     <img src="images/logo.png" alt="logo" class="logo">
   </div>
 
-  <!-- ===== 标签切换 ===== -->
+  <!-- 标签切换 -->
   <div class="tab">
     <button class="tablinks active" onclick="openTab(event,'accelerator')">加速器教程</button>
     <button class="tablinks" onclick="openTab(event,'telegram')">Telegram下载</button>
@@ -143,20 +121,24 @@
     <div class="nav-section">
       <h2>购买加速器教程</h2>
       <p>按照以下步骤完成加速器安装：</p>
+
       <div class="tutorial-step">
+        <img src="images/jiasuqi1.png" alt="步骤一：点击右上角三条横线">
         <p>步骤一：点击右上角三条横线</p>
-        <img src="images/jiasuqi1.png" alt="步骤一">
       </div>
+
       <div class="tutorial-step">
+        <img src="images/jiasuqi2.png" alt="步骤二：点击下载">
         <p>步骤二：点击下载</p>
-        <img src="images/jiasuqi2.png" alt="步骤二">
       </div>
+
       <div class="tutorial-step">
-        <p>步骤三：选择自己的手机型号对应下载，苹果选择IOS，安卓选择Android</p>
-        <img src="images/jiasuqi3.png" alt="步骤三">
+        <img src="images/jiasuqi3.png" alt="步骤三：选择自己的手机型号">
+        <p>步骤三：选择自己的手机型号对应下载，苹果选择 IOS，安卓选择 Android</p>
       </div>
-      <a href="https://www.any81.com" target="_blank" class="btn">下载推荐加速器</a>
-      <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">直接安装</a>
+
+      <a href="https://www.any81.com" target="_blank" class="btn">点击这里下载推荐加速器</a>
+      <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">点击这里直接安装</a>
     </div>
   </div>
 
@@ -173,31 +155,39 @@
   <div id="appleid" class="tab-content">
     <div class="nav-section">
       <h2>苹果手机海外ID教程</h2>
+      <p>购买海外账号通常更容易登录且更稳定；免费的账号存在登录失败风险。购买海外 Apple ID 后，在手机 App Store 使用该账号登录；登录成功后即可下载下列应用。</p>
+
       <a href="https://m.bigplayers.com/detail/303?inviteCode=B0004609" target="_blank" class="btn">购买海外ID</a>
       <a href="https://www.any2388.com/#/installGuide" target="_blank" class="btn">免费获取海外ID</a>
-      <p>购买海外账号通常更容易登录且更稳定；免费的账号则存在登录失败的风险。购买海外 Apple ID 后，在手机的 App Store 使用该账号登录；登录成功后即可下载下列应用，所有应用均可通过该海外 ID 下载，操作简便可靠。</p>
 
-      <!-- 海外ID步骤图片和文字 -->
       <div class="tutorial-step">
-        <p>1. 下载聊天软件<br>在App Store搜索Telegram并下载</p>
-        <img src="images/feiji1.png" alt="Telegram">
+        <img src="images/feiji1.png" alt="下载聊天软件">
+        <p>1. 在App Store 搜索 Telegram 并下载</p>
       </div>
+
       <div class="tutorial-step">
-        <p>2. 下载加速器<br>在App Store搜索Anycast并下载</p>
-        <img src="images/vpn1.png" alt="Anycast">
+        <img src="images/vpn1.png" alt="下载加速器">
+        <p>2. 在App Store 搜索 Anycast 并下载</p>
       </div>
+
       <div class="tutorial-step">
-        <p>3. 下载浏览器<br>在App Store搜索Google Chrome并下载<br>搜索Egdg浏览器并下载（可作为备用浏览器）</p>
-        <img src="images/liulanqi1.png" alt="浏览器1">
-        <img src="images/liulanqi2.png" alt="浏览器2">
+        <img src="images/liulanqi1.png" alt="下载浏览器">
+        <p>3. 在App Store 搜索 Google Chrome 并下载</p>
       </div>
+
       <div class="tutorial-step">
-        <p>5. 下载交易软件<br>在App Store搜索欧易或OKX并下载，Binance（币安也可作为备用）</p>
-        <img src="images/ouyi1.png" alt="欧易/OKX">
+        <img src="images/liulanqi2.png" alt="下载备用浏览器">
+        <p>4. 搜索 Egdg 并下载（备用浏览器）</p>
       </div>
+
       <div class="tutorial-step">
-        <p>6. 下载冷钱包<br>在App Store搜索imToken并下载（冷钱包，可下载备用）</p>
-        <img src="images/lengqianbao1.png" alt="imToken">
+        <img src="images/ouyi1.png" alt="下载交易软件">
+        <p>5. 在App Store 搜索 欧易 或 OKX 并下载，Binance（币安可作备用）</p>
+      </div>
+
+      <div class="tutorial-step">
+        <img src="images/lengqianbao1.png" alt="下载冷钱包">
+        <p>6. 在App Store 搜索 imToken 并下载（冷钱包，可备用）</p>
       </div>
     </div>
   </div>
@@ -206,13 +196,9 @@
     function openTab(evt, tabName) {
       var i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName("tab-content");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].classList.remove("active");
-      }
+      for (i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
       tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-      }
+      for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
       document.getElementById(tabName).classList.add("active");
       evt.currentTarget.classList.add("active");
     }
@@ -220,3 +206,4 @@
 
 </body>
 </html>
+

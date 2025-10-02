@@ -1,109 +1,110 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的一站式导航</title>
-  <style>
-    body { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的一站式导航</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; }
 
-    /* 顶部背景 + 滚动文字 + logo */
-    .top-background {
-      background: url('images/beijing.png') no-repeat center/cover;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 20px 10px;
-      height: 180px;
-      position: relative;
-      overflow: hidden;
-    }
+  /* 顶部背景 + 滚动文字 + logo */
+  .top-background {
+    background: url('images/beijing.png') no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+  }
 
-    .scroll-title-wrapper {
-      width: 100%;
-      overflow: hidden;
-      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-      margin-bottom: 20px;
-    }
+  /* 滚动文字容器 */
+  .scroll-container {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    margin-bottom: 10px;
+  }
 
-    .scroll-title {
-      font-size: 36px;
-      font-weight: bold;
-      background: linear-gradient(to right, #00c6ff, #0072ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      white-space: nowrap;
-      position: relative;
-      animation: scrollText 10s linear infinite;
-    }
+  .scroll-title {
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    position: absolute;
+    will-change: transform;
+    animation: scrollText 10s linear infinite;
+  }
 
-    @keyframes scrollText {
-      0% { transform: translateX(100%); opacity: 1; }
-      70% { opacity: 1; }
-      90% { opacity: 0; }
-      100% { transform: translateX(-100%); opacity: 0; }
-    }
+  @keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
 
-    .logo {
-      height: 140px;
-      z-index: 2;
-    }
+  .logo {
+    height: 120px;
+    z-index: 2;
+  }
 
-    /* 标签切换按钮 */
-    .tab {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 10px 0;
-      gap: 10px;
-    }
-    .tab button {
-      padding: 8px 16px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background-color: #0066cc;
-      color: #fff;
-      transition: background-color 0.3s;
-    }
-    .tab button.active, .tab button:hover { background-color: #004999; }
+  /* 标签切换按钮 */
+  .tab {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    gap: 10px;
+  }
+  .tab button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0066cc;
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+  .tab button.active, .tab button:hover { background-color: #004999; }
 
-    /* 内容区 */
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
+  /* 内容区 */
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
 
-    .nav-section { background-color: #fff; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
-    h2 { color: #444; margin-top: 0; }
-    p { font-size: 18px; line-height: 1.6; }
-    .btn {
-      display: inline-block;
-      padding: 8px 16px;
-      margin: 5px 5px 10px 0;
-      font-size: 16px;
-      color: #fff;
-      background-color: #0066cc;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .btn:hover { background-color: #004999; }
+  .nav-section { background-color: #fff; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+  h2 { color: #444; margin-top: 0; }
+  p { font-size: 18px; line-height: 1.6; }
+  .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 5px 5px 10px 0;
+    font-size: 16px;
+    color: #fff;
+    background-color: #0066cc;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .btn:hover { background-color: #004999; }
 
-    img { max-width: 100%; height: auto; margin-top: 10px; }
-    .tutorial-step { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
-    .tutorial-step img { max-width: 600px; width: 100%; }
-    .tutorial-step p { font-size: 18px; line-height: 1.6; text-align: center; margin-top: 8px; }
-  </style>
+  img { max-width: 100%; height: auto; margin-top: 10px; }
+  .tutorial-step { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
+  .tutorial-step img { max-width: 600px; width: 100%; }
+  .tutorial-step p { font-size: 18px; line-height: 1.6; text-align: center; margin-top: 8px; }
+</style>
 </head>
 <body>
 
   <!-- 顶部背景、滚动文字、logo -->
   <div class="top-background">
-    <div class="scroll-title-wrapper">
+    <div class="scroll-container">
       <div class="scroll-title">聯信資財富導航</div>
     </div>
     <img src="images/logo.png" alt="logo" class="logo">
@@ -176,7 +177,7 @@
       </div>
 
       <div class="tutorial-step">
-        <img src="images/liulanqi2.png" alt="下载备用浏览器">
+        <img src="images/liulanqi2.png" alt="备用浏览器">
         <p>4. 搜索 Egdg 并下载（备用浏览器）</p>
       </div>
 
@@ -187,23 +188,24 @@
 
       <div class="tutorial-step">
         <img src="images/lengqianbao1.png" alt="下载冷钱包">
-        <p>6. 在App Store 搜索 imToken 并下载（冷钱包，可备用）</p>
+        <p>6. 在App Store 搜索 imToken 并下载（冷钱包，可下载备用）</p>
       </div>
     </div>
   </div>
 
-  <script>
-    function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tab-content");
-      for (i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
-      document.getElementById(tabName).classList.add("active");
-      evt.currentTarget.classList.add("active");
-    }
-  </script>
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) tabcontent[i].classList.remove("active");
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
+  document.getElementById(tabName).classList.add("active");
+  evt.currentTarget.classList.add("active");
+}
+</script>
 
 </body>
 </html>
+
 

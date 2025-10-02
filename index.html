@@ -7,14 +7,40 @@
   <style>
     body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px; margin: 0; }
     h1 { color: #333; text-align: center; margin-bottom: 30px; }
+
+    /* 标签切换按钮 */
+    .tab {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+    .tab button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #0066cc;
+      color: #fff;
+      transition: background-color 0.3s;
+    }
+    .tab button.active, .tab button:hover {
+      background-color: #004999;
+    }
+
+    /* 内容区 */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
     .nav-section { background-color: #fff; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
     h2 { color: #444; margin-top: 0; }
     p { font-size: 16px; line-height: 1.5; }
     .btn {
       display: inline-block;
-      padding: 12px 24px;       /* 按钮稍微大一点 */
-      margin: 5px 0;
-      font-size: 18px;          /* 按钮字体加大 */
+      padding: 12px 24px;
+      margin: 5px 5px 10px 0;
+      font-size: 18px;
       color: #fff;
       background-color: #0066cc;
       border: none;
@@ -36,7 +62,7 @@
       width: 100%;
     }
     .tutorial-step p {
-      font-size: 18px;   /* 步骤文字加大 */
+      font-size: 18px;
       line-height: 1.6;  
       text-align: center;
       margin-top: 8px;
@@ -47,49 +73,74 @@
 
   <h1>我的一站式导航</h1>
 
-  <!-- ===== 分类 1 ===== -->
-  <div class="nav-section">
-    <h2>购买加速器教程</h2>
-    <p>先准备一台备用机，然后操作以下步骤：</p>
-
-    <a href="https://www.any81.com" target="_blank" class="btn">点击这里下载推荐加速器</a>
-    <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">点击这里直接安装</a>
+  <!-- 标签切换 -->
+  <div class="tab">
+    <button class="tablinks active" onclick="openTab(event,'accelerator')">加速器教程</button>
+    <button class="tablinks" onclick="openTab(event,'telegram')">Telegram下载</button>
   </div>
 
-  <!-- ===== 分类 2 ===== -->
-  <div class="nav-section">
-    <h2>示例图片和说明</h2>
-    <p>按照以下步骤完成加速器安装：</p>
-
-    <!-- 步骤 1 -->
-    <div class="tutorial-step">
-      <img src="images/jiasuqi1.png" alt="步骤1：点击右上角三条横线">
-      <p>步骤1：点击右上角三条横线</p>
+  <!-- ===== 加速器教程 ===== -->
+  <div id="accelerator" class="tab-content active">
+    <div class="nav-section">
+      <h2>购买加速器教程</h2>
+      <p>先准备一台备用机，然后操作以下步骤：</p>
+      <a href="https://www.any81.com" target="_blank" class="btn">点击这里下载推荐加速器</a>
+      <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">点击这里直接安装</a>
     </div>
 
-    <!-- 步骤 2 -->
-    <div class="tutorial-step">
-      <img src="images/jiasuqi2.png" alt="步骤2：点击下载">
-      <p>步骤2：点击下载</p>
+    <div class="nav-section">
+      <h2>示例图片和说明</h2>
+      <p>按照以下步骤完成加速器安装：</p>
+
+      <div class="tutorial-step">
+        <img src="images/jiasuqi1.png" alt="步骤1：点击右上角三条横线">
+        <p>步骤1：点击右上角三条横线</p>
+      </div>
+
+      <div class="tutorial-step">
+        <img src="images/jiasuqi2.png" alt="步骤2：点击下载">
+        <p>步骤2：点击下载</p>
+      </div>
+
+      <div class="tutorial-step">
+        <img src="images/jiasuqi3.png" alt="步骤3：选择自己的手机型号">
+        <p>步骤3：选择自己的手机型号，苹果选择 iOS，安卓选择 Android</p>
+      </div>
     </div>
 
-    <!-- 步骤 3 -->
-    <div class="tutorial-step">
-      <img src="images/jiasuqi3.png" alt="步骤3：选择自己的手机型号">
-      <p>步骤3：选择自己的手机型号，苹果选择 iOS，安卓选择 Android</p>
+    <div class="nav-section">
+      <h2>其他网页导航</h2>
+      <p>添加其他跳转链接：</p>
+      <a href="https://www.bilibili.com" target="_blank" class="btn">B站首页</a>
+      <a href="https://www.example.com" target="_blank" class="btn">其他示例网页</a>
     </div>
-
   </div>
 
-  <!-- ===== 分类 3 ===== -->
-  <div class="nav-section">
-    <h2>其他网页导航</h2>
-    <p>添加其他跳转链接：</p>
-
-    <a href="https://www.bilibili.com" target="_blank" class="btn">B站首页</a>
-    <a href="https://www.example.com" target="_blank" class="btn">其他示例网页</a>
+  <!-- ===== Telegram下载 ===== -->
+  <div id="telegram" class="tab-content">
+    <div class="nav-section">
+      <h2>Telegram（纸飞机下载与购买）</h2>
+      <p>点击下面按钮下载或购买 Telegram：</p>
+      <a href="https://telegram.org/" target="_blank" class="btn">下载飞机</a>
+      <a href="https://f12580.com/" target="_blank" class="btn">购买飞机</a>
+    </div>
   </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
 
 </body>
 </html>
-

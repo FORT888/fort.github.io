@@ -7,53 +7,48 @@
   <style>
     body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 0; margin: 0; }
 
-    /* ===== 顶部 logo + 滚动文字 ===== */
+    /* ===== 顶部背景 + 滚动文字 + logo ===== */
     .top-background {
       background: url('images/beijing.png') no-repeat center/cover;
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       padding: 10px 20px;
-      height: 150px;
+      height: 180px;
       position: relative;
       overflow: hidden;
     }
 
-    .logo {
-      height: 80px;
-      flex-shrink: 0;
-      z-index: 2;
-      margin-right: 10px;
-    }
-
-    .scroll-wrapper {
-      flex: 1;
-      height: 100%;
+    .scroll-title-wrapper {
+      width: 100%;
       overflow: hidden;
-      position: relative;
-      display: flex;
-      align-items: flex-start;
       mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
     }
 
     .scroll-title {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: bold;
       background: linear-gradient(to right, #00c6ff, #0072ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       white-space: nowrap;
-      position: absolute;
-      left: 100%;
-      top: 0;
-      animation: scrollLogo 10s linear infinite;
+      position: relative;
+      animation: scrollText 10s linear infinite;
     }
 
-    @keyframes scrollLogo {
-      0% { left: 100%; opacity: 1; }
+    @keyframes scrollText {
+      0% { transform: translateX(100%); opacity: 1; }
       70% { opacity: 1; }
       90% { opacity: 0; }
-      100% { left: -100%; opacity: 0; }
+      100% { transform: translateX(-100%); opacity: 0; }
+    }
+
+    .logo {
+      height: 120px; /* 放大 logo */
+      margin-top: 10px;
+      z-index: 2;
     }
 
     /* ===== 标签切换 ===== */
@@ -129,12 +124,12 @@
 </head>
 <body>
 
-  <!-- ===== 顶部 logo + 滚动文字 ===== -->
+  <!-- ===== 顶部背景 + 滚动文字 + logo ===== -->
   <div class="top-background">
-    <img src="images/logo.png" alt="logo" class="logo">
-    <div class="scroll-wrapper">
+    <div class="scroll-title-wrapper">
       <div class="scroll-title">聯信資財富導航</div>
     </div>
+    <img src="images/logo.png" alt="logo" class="logo">
   </div>
 
   <!-- ===== 标签切换 ===== -->
@@ -144,81 +139,8 @@
     <button class="tablinks" onclick="openTab(event,'appleid')">苹果手机海外ID教程</button>
   </div>
 
-  <!-- ===== 导航1：加速器教程 ===== -->
-  <div id="accelerator" class="tab-content active">
-    <div class="nav-section">
-      <h2>购买加速器教程</h2>
-      <p>按照以下步骤完成加速器安装：</p>
-      
-      <div class="tutorial-step">
-        <p>步骤一<br>点击右上角三条横线</p>
-        <img src="images/jiasuqi1.png" alt="步骤一：点击右上角三条横线">
-      </div>
-
-      <div class="tutorial-step">
-        <p>步骤二<br>点击下载</p>
-        <img src="images/jiasuqi2.png" alt="步骤二：点击下载">
-      </div>
-
-      <div class="tutorial-step">
-        <p>步骤三<br>选择自己的手机型号对应下载，苹果选择IOS，安卓选择Android</p>
-        <img src="images/jiasuqi3.png" alt="步骤三：选择手机型号">
-      </div>
-
-      <a href="https://www.any81.com" target="_blank" class="btn">点击这里下载推荐加速器</a>
-      <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">点击这里直接安装</a>
-    </div>
-  </div>
-
-  <!-- ===== 导航2：Telegram下载 ===== -->
-  <div id="telegram" class="tab-content">
-    <div class="nav-section">
-      <h2>Telegram（纸飞机下载与购买）</h2>
-      <p>点击下面按钮下载或购买 Telegram：</p>
-      <a href="https://telegram.org/" target="_blank" class="btn">下载飞机</a>
-      <a href="https://f12580.com/" target="_blank" class="btn">购买飞机</a>
-    </div>
-  </div>
-
-  <!-- ===== 导航3：苹果手机海外ID教程 ===== -->
-  <div id="appleid" class="tab-content">
-    <div class="nav-section">
-      <h2>苹果手机海外ID教程</h2>
-      <p>购买海外账号通常更容易登录且更稳定；免费的账号存在登录失败的风险。购买海外 Apple ID 后，在手机 App Store 使用该账号登录即可下载下列应用，操作简便可靠。</p>
-
-      <!-- 海外ID 步骤图片和说明 -->
-      <div class="tutorial-step">
-        <p>1.下载聊天软件<br>在App Store 搜索 Telegram 并下载</p>
-        <img src="images/feiji1.png" alt="Telegram">
-      </div>
-
-      <div class="tutorial-step">
-        <p>2.下载加速器<br>在App Store 搜索 Anycast 并下载</p>
-        <img src="images/vpn1.png" alt="Anycast">
-      </div>
-
-      <div class="tutorial-step">
-        <p>3.下载浏览器<br>在App Store 搜索 Google Chrome 并下载（Egdg 可作为备用浏览器）</p>
-        <img src="images/liulanqi1.png" alt="Google Chrome">
-        <img src="images/liulanqi2.png" alt="Egdg 浏览器">
-      </div>
-
-      <div class="tutorial-step">
-        <p>4.在App Store 搜索欧易或OKX 并下载，Binance（币安可作为备用）</p>
-        <img src="images/ouyi1.png" alt="欧易/OKX">
-      </div>
-
-      <div class="tutorial-step">
-        <p>5.在App Store 搜索 imToken 并下载（冷钱包，可下载备用）</p>
-        <img src="images/lengqianbao1.png" alt="imToken">
-      </div>
-
-      <!-- 顶部按钮 -->
-      <a href="https://m.bigplayers.com/detail/303?inviteCode=B0004609" target="_blank" class="btn">购买海外ID</a>
-      <a href="https://www.any2388.com/#/installGuide" target="_blank" class="btn">免费获取海外ID</a>
-
-    </div>
-  </div>
+  <!-- ===== 导航内容 (可沿用之前整合的内容) ===== -->
+  <!-- 这里继续使用你之前整合的三个导航 HTML -->
 
   <script>
     function openTab(evt, tabName) {

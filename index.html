@@ -10,9 +10,21 @@
     .nav-section { background-color: #fff; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
     h2 { color: #444; margin-top: 0; }
     p { font-size: 16px; line-height: 1.5; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    iframe { border: 1px solid #ccc; margin-top: 10px; width: 100%; height: 400px; max-width: 800px; display: block; }
+    /* 按钮样式 */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px 0;
+      font-size: 16px;
+      color: #fff;
+      background-color: #0066cc;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn:hover { background-color: #004999; }
     img { max-width: 100%; height: auto; margin-top: 10px; }
   </style>
 </head>
@@ -25,20 +37,15 @@
     <h2>购买加速器教程</h2>
     <p>先准备一台备用机，然后操作以下步骤：</p>
 
-    <p>
-      <a href="https://www.any81.com" target="_blank">点击这里</a> 下载推荐加速器
-    </p>
+    <!-- 下载加速器（按钮） -->
+    <a href="https://www.any81.com" target="_blank" class="btn">点击这里下载推荐加速器</a>
 
-    <p>
-      <a href="https://client.alioss.net/anycast.apk" target="_blank">点击这里</a> 直接安装
-    </p>
+    <!-- 安装 APK（按钮） -->
+    <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">点击这里直接安装</a>
 
-    <p>
-      <a href="https://www.any81.com" target="_blank">点击这里</a> 内嵌网址示例
-    </p>
+    <!-- 内嵌网址示例（按钮） -->
+    <a href="https://www.any81.com" target="_blank" class="btn">点击这里查看示例网页</a>
 
-    <!-- 内嵌网页 -->
-    <iframe src="https://www.any81.com"></iframe>
   </div>
 
   <!-- ===== 分类 2 ===== -->
@@ -55,13 +62,11 @@
   <!-- ===== 分类 3 ===== -->
   <div class="nav-section">
     <h2>其他网页导航</h2>
-    <p>添加其他跳转链接或内嵌网页：</p>
+    <p>添加其他跳转链接：</p>
     
-    <p>
-      <a href="https://www.bilibili.com" target="_blank">B站首页</a>
-    </p>
-
-    <iframe src="https://example.com"></iframe>
+    <!-- 按钮跳转 -->
+    <a href="https://www.bilibili.com" target="_blank" class="btn">B站首页</a>
+    <a href="https://www.example.com" target="_blank" class="btn">其他示例网页</a>
   </div>
 
 </body>

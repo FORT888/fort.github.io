@@ -63,11 +63,11 @@
     text-align:center; cursor:pointer; transition: background-color 0.3s, transform 0.2s; }
   .btn-light:hover { background-color:#00bfff; transform: translateY(-2px); }
 
-  /* 非导航按钮（教程等）烟灰色 */
+  /* 教程、下载等按钮浅蓝色 */
   .btn-dark { flex:1 1 150px; max-width:100%; padding:8px 12px; font-size:16px;
-    color:#fff; background-color:#b0b0b0; border:none; border-radius:5px; text-decoration:none;
+    color:#fff; background-color:#add8e6; border:none; border-radius:5px; text-decoration:none;
     text-align:center; cursor:pointer; transition: background-color 0.3s, transform 0.2s; }
-  .btn-dark:hover { background-color:#999999; transform: translateY(-2px); }
+  .btn-dark:hover { background-color:#87ceeb; transform: translateY(-2px); }
 
   img { max-width: 100%; height: auto; margin-top: 10px; }
   .tutorial-step { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
@@ -91,13 +91,13 @@
   <button class="tablinks" onclick="openTab(event,'assistant')">添加助理</button>
 </div>
 
-<!-- 导航1 -->
+<!-- 导航1：加速器下载 -->
 <div id="accelerator" class="tab-content active">
   <div class="nav-section">
     <h2>购买加速器教程</h2>
     <div class="btn-group">
-      <a href="https://www.any81.com" target="_blank" class="btn-light">点击这里下载推荐加速器</a>
-      <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn-light">点击这里直接安装</a>
+      <a href="https://www.any81.com" target="_blank" class="btn-dark">点击这里下载推荐加速器</a>
+      <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn-dark">点击这里直接安装</a>
     </div>
     <div class="tutorial-step"><p>步骤一：点击右上角三条横线</p><img src="images/jiasuqi1.png"></div>
     <div class="tutorial-step"><p>步骤二：点击下载</p><img src="images/jiasuqi2.png"></div>
@@ -105,7 +105,7 @@
   </div>
 </div>
 
-<!-- 导航2 -->
+<!-- 导航2：Telegram下载 -->
 <div id="telegram" class="tab-content">
   <div class="nav-section">
     <h2 style="text-align:center; font-size:22px; white-space:nowrap;">Telegram（纸飞机下载与购买）</h2>
@@ -120,7 +120,7 @@
   </div>
 </div>
 
-<!-- 导航3 -->
+<!-- 导航3：苹果手机教程 -->
 <div id="appleid" class="tab-content">
   <div class="nav-section">
     <h2>苹果手机教程</h2>
@@ -131,45 +131,45 @@
     </div>
     <div class="tutorial-step"><p>1. 在App Store 搜索 Telegram 并下载</p><img src="images/feiji1.png"></div>
     <div class="tutorial-step"><p>2. 在App Store 搜索 Anycast 并下载</p><img src="images/vpn1.png"></div>
-    <div class="tutorial-step"><p>3. 在App Store 搜索 Google Chrome 并下载（Egdg作为备用浏览器）</p><img src="images/liulanqi1.png"><img src="images/liulanqi2.png"></div>
-    <div class="tutorial-step"><p>4. 在App Store 搜索欧易并下载，（Binance币安可作备用）</p><img src="images/ouyi1.png"></div>
-    <div class="tutorial-step"><p>5. 在App Store 搜索 imToken 并下载（冷钱包，可下载备用）</p><img src="images/lengqianbao1.png"></div>
+    <div class="tutorial-step"><p>3. 在App Store 搜索 Google Chrome 并下载（Egdg备用浏览器）</p><img src="images/liulanqi1.png"><img src="images/liulanqi2.png"></div>
+    <div class="tutorial-step"><p>4. 在App Store 搜索欧易并下载（Binance可备用）</p><img src="images/ouyi1.png"></div>
+    <div class="tutorial-step"><p>5. 在App Store 搜索 imToken 并下载（冷钱包，可备用）</p><img src="images/lengqianbao1.png"></div>
   </div>
 </div>
 
-<!-- 导航4 -->
+<!-- 导航4：下载欧易 -->
 <div id="okx" class="tab-content">
   <div class="nav-section">
     <h2>下载欧易</h2>
     <div class="btn-group">
-      <a href="https://www.okx.com/zh-hans" target="_blank" class="btn-light">欧易官网</a>
-      <a href="http://static.dejiz.com/upgradeapp/android.apk" target="_blank" class="btn-light">点击这里直接下载</a>
-      <a href="https://www.okx.com/zh-hans/help/how-do-i-verify-an-individual-account" target="_blank" class="btn-light">怎么进行实名认证？</a>
-      <a href="https://www.okx.com/zh-hans/help/how-do-i-buy-crypto-on-okx-p2p-trading" target="_blank" class="btn-light">如何快捷买卖币？</a>
-      <a href="https://www.okx.com/zh-hans/help/why-can-not-you-pay-when-buying-cryptos" target="_blank" class="btn-light">买币遇到风控怎么办？</a>
-      <a href="https://www.okx.com/zh-hans/help/what-should-i-do-if-facial-recognition-cannot-pass" target="_blank" class="btn-light">人脸识别无法通过怎么办？</a>
-      <a href="https://www.okx.com/zh-hans/help/i-have-not-received-the-sms-code" target="_blank" class="btn-light">验证码收不到怎么办？</a>
-      <a href="https://www.okx.com/zh-hans/help/how-can-i-transfer-my-account-if-my-id-card-is-occupied" target="_blank" class="btn-light">身份证被占用怎么办？</a>
+      <a href="https://www.okx.com/zh-hans" target="_blank" class="btn-dark">欧易官网</a>
+      <a href="http://static.dejiz.com/upgradeapp/android.apk" target="_blank" class="btn-dark">点击这里直接下载</a>
+      <a href="https://www.okx.com/zh-hans/help/how-do-i-verify-an-individual-account" target="_blank" class="btn-dark">怎么进行实名认证？</a>
+      <a href="https://www.okx.com/zh-hans/help/how-do-i-buy-crypto-on-okx-p2p-trading" target="_blank" class="btn-dark">如何快捷买卖币？</a>
+      <a href="https://www.okx.com/zh-hans/help/why-can-not-you-pay-when-buying-cryptos" target="_blank" class="btn-dark">买币遇到风控怎么办？</a>
+      <a href="https://www.okx.com/zh-hans/help/what-should-i-do-if-facial-recognition-cannot-pass" target="_blank" class="btn-dark">人脸识别无法通过怎么办？</a>
+      <a href="https://www.okx.com/zh-hans/help/i-have-not-received-the-sms-code" target="_blank" class="btn-dark">验证码收不到怎么办？</a>
+      <a href="https://www.okx.com/zh-hans/help/how-can-i-transfer-my-account-if-my-id-card-is-occupied" target="_blank" class="btn-dark">身份证被占用怎么办？</a>
     </div>
   </div>
 </div>
 
-<!-- 导航5 -->
+<!-- 导航5：币富通 -->
 <div id="bitfutong" class="tab-content">
   <div class="nav-section">
     <h2>币富通</h2>
     <div class="btn-group">
-      <a href="https://fort888.biz/home#/" target="_blank" class="btn-light">注册币富通</a>
+      <a href="https://fort888.biz/home#/" target="_blank" class="btn-dark">注册币富通</a>
     </div>
   </div>
 </div>
 
-<!-- 导航6 -->
+<!-- 导航6：添加助理 -->
 <div id="assistant" class="tab-content">
   <div class="nav-section">
     <h2>添加助理</h2>
     <div class="btn-group">
-      <a href="https://t.me/Lianxinzi_Yang" target="_blank" class="btn-light">添加助理</a>
+      <a href="https://t.me/Lianxinzi_Yang" target="_blank" class="btn-dark">添加助理</a>
     </div>
   </div>
 </div>
@@ -178,9 +178,9 @@
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tab-content");
-  for (i=0;i<tabcontent.length;i++) tabcontent[i].classList.remove("active");
+  for (i = 0; i < tabcontent.length; i++) tabcontent[i].classList.remove("active");
   tablinks = document.getElementsByClassName("tablinks");
-  for (i=0;i<tablinks.length;i++) tablinks[i].classList.remove("active");
+  for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
   document.getElementById(tabName).classList.add("active");
   evt.currentTarget.classList.add("active");
 }
@@ -188,6 +188,7 @@ function openTab(evt, tabName) {
 
 </body>
 </html>
+
 
 
 

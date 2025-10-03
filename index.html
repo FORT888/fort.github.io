@@ -51,14 +51,15 @@
   .tab { display: flex; justify-content: center; flex-wrap: wrap; margin: 10px 0; gap: 10px; }
   .tab button {
     padding: 8px 16px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;
-    background-color: #4078CC; color: #fff; font-weight: bold;
-    transition: background-color 0.3s;
+    background-color: #0066cc; color: #fff; font-weight: bold; transition: background-color 0.3s;
   }
-  .tab button.active, .tab button:hover {
-    background-color: #004999;
-    background: linear-gradient(to right, #EC808D, #02A7F0);
+  .tab button.active, .tab button:hover { background-color: #004999; }
+  .tab button.active { 
+    background: none;
+    background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-image: linear-gradient(to right, #EC808D, #02A7F0);
   }
 
   /* 内容区 */
@@ -66,11 +67,11 @@
   .tab-content.active { display: block; }
 
   .nav-section { background-color: #fff; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-  h2 { color: #444; margin-top: 0; text-align: center; }
-  p { font-size: 18px; line-height: 1.6; text-align: center; }
+  h2 { color: #444; margin-top: 0; }
+  p { font-size: 18px; line-height: 1.6; }
 
-  /* 导航内容按钮天蓝色 */
-  .btn-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; justify-content: center; }
+  /* 所有非导航按钮颜色 */
+  .btn-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
   .btn-light {
     flex: 1 1 150px;
     max-width: 100%;
@@ -91,6 +92,7 @@
   .tutorial-step { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
   .tutorial-step img { max-width: 600px; width: 100%; }
   .tutorial-step p { font-size: 20px; line-height: 1.6; text-align: center; margin-bottom: 8px; }
+
 </style>
 </head>
 <body>
@@ -106,11 +108,11 @@
   <!-- 标签切换 -->
   <div class="tab">
     <button class="tablinks active" onclick="openTab(event,'accelerator')">加速器下载</button>
-    <button class="tablinks" onclick="openTab(event,'telegram')">Telegram下载</button>
     <button class="tablinks" onclick="openTab(event,'okx')">欧易下载</button>
     <button class="tablinks" onclick="openTab(event,'bitfutong')">币富通</button>
     <button class="tablinks" onclick="openTab(event,'assistant')">添加助理</button>
     <button class="tablinks" onclick="openTab(event,'appleid')">苹果手机教程</button>
+    <button class="tablinks" onclick="openTab(event,'telegram')">Telegram下载</button>
   </div>
 
   <!-- ===== 导航1：加速器下载 ===== -->
@@ -121,40 +123,18 @@
         <a href="https://www.any81.com" target="_blank" class="btn-light">点击这里下载推荐加速器</a>
         <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn-light">点击这里直接安装</a>
       </div>
+
       <div class="tutorial-step">
         <p>步骤一：点击右上角三条横线</p>
-        <img src="images/jiasuqi1.png" alt="步骤一">
+        <img src="images/jiasuqi1.png" alt="步骤一：点击右上角三条横线">
       </div>
       <div class="tutorial-step">
         <p>步骤二：点击下载</p>
-        <img src="images/jiasuqi2.png" alt="步骤二">
+        <img src="images/jiasuqi2.png" alt="步骤二：点击下载">
       </div>
       <div class="tutorial-step">
         <p>步骤三：选择自己的手机型号对应下载，苹果选择 IOS，安卓选择 Android</p>
-        <img src="images/jiasuqi3.png" alt="步骤三">
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== 导航2：Telegram下载 ===== -->
-  <div id="telegram" class="tab-content">
-    <div class="nav-section">
-      <h2>Telegram（纸飞机下载与购买）</h2>
-      <div class="btn-group">
-        <a href="https://telegram.org/" target="_blank" class="btn-light">下载飞机</a>
-        <a href="https://f12580.com/" target="_blank" class="btn-light">购买飞机</a>
-      </div>
-      <div class="tutorial-step">
-        <p>步骤一</p>
-        <img src="images/goumaifeiji.png" alt="步骤一">
-      </div>
-      <div class="tutorial-step">
-        <p>步骤二</p>
-        <img src="images/goumaifeiji2.png" alt="步骤二">
-      </div>
-      <div class="tutorial-step">
-        <p>步骤三</p>
-        <img src="images/goumaifeiji3.png" alt="步骤三">
+        <img src="images/jiasuqi3.png" alt="步骤三：选择自己的手机型号">
       </div>
     </div>
   </div>
@@ -165,7 +145,7 @@
       <h2>欧易下载</h2>
       <div class="btn-group">
         <a href="https://www.okx.com/zh-hans" target="_blank" class="btn-light">欧易官网</a>
-        <a href="http://static.dejiz.com/upgradeapp/android.apk" target="_blank" class="btn-light">点击这里直接下载</a>
+        <a href="http://static.dejiz.com/upgradeapp/android.apk" target="_blank" class="btn-light">安卓点击这里直接下载</a>
         <a href="https://www.okx.com/zh-hans/help/how-do-i-verify-an-individual-account" target="_blank" class="btn-light">怎么进行实名认证？</a>
         <a href="https://www.okx.com/zh-hans/help/how-do-i-buy-crypto-on-okx-p2p-trading" target="_blank" class="btn-light">如何快捷买卖币？</a>
         <a href="https://www.okx.com/zh-hans/help/why-can-not-you-pay-when-buying-cryptos" target="_blank" class="btn-light">买币遇到风控怎么办？</a>
@@ -207,6 +187,7 @@
         <a href="https://www.okx.com/zh-hans/help/how-to-download-okx-app-on-iphone" target="_blank" class="btn-light">如何自己注册海外ID？</a>
       </div>
       <p>苹果手机所需软件均需通过海外ID下载，可免费获取，也可自行购买。只需在 App Store 切换账号，即可一键下载。</p>
+
       <div class="tutorial-step">
         <p>1. 在App Store 搜索 Telegram 并下载</p>
         <img src="images/feiji1.png" alt="下载聊天软件">
@@ -231,6 +212,29 @@
     </div>
   </div>
 
+  <!-- ===== 导航2：Telegram下载 ===== -->
+  <div id="telegram" class="tab-content">
+    <div class="nav-section">
+      <h2>Telegram（纸飞机下载与购买）</h2>
+      <div class="btn-group">
+        <a href="https://telegram.org/" target="_blank" class="btn-light">下载飞机</a>
+        <a href="https://f12580.com/" target="_blank" class="btn-light">购买飞机</a>
+      </div>
+      <div class="tutorial-step">
+        <p>步骤一</p>
+        <img src="images/goumaifeiji.png" alt="步骤一">
+      </div>
+      <div class="tutorial-step">
+        <p>步骤二</p>
+        <img src="images/goumaifeiji2.png" alt="步骤二">
+      </div>
+      <div class="tutorial-step">
+        <p>步骤三</p>
+        <img src="images/goumaifeiji3.png" alt="步骤三">
+      </div>
+    </div>
+  </div>
+
 <script>
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
@@ -245,6 +249,7 @@ function openTab(evt, tabName) {
 
 </body>
 </html>
+
 
 
 

@@ -20,7 +20,6 @@
     overflow: hidden;
   }
 
-  /* 滚动文字容器 */
   .scroll-container {
     width: 100%;
     height: 50px;
@@ -46,51 +45,23 @@
     100% { transform: translateX(-100%); }
   }
 
-  /* logo 在下方，不遮挡文字 */
-  .logo {
-    height: 120px;
-    margin-top: 10px;
-    z-index: 1;
-  }
+  .logo { height: 120px; margin-top: 10px; z-index: 1; }
 
-  /* 标签切换按钮 */
-  .tab {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 10px 0;
-    gap: 10px;
-  }
+  .tab { display: flex; justify-content: center; flex-wrap: wrap; margin: 10px 0; gap: 10px; }
   .tab button {
-    padding: 8px 16px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #0066cc;
-    color: #fff;
-    transition: background-color 0.3s;
+    padding: 8px 16px; font-size: 16px; border: none; border-radius: 5px;
+    cursor: pointer; background-color: #0066cc; color: #fff; transition: background-color 0.3s;
   }
   .tab button.active, .tab button:hover { background-color: #004999; }
 
-  /* 内容区 */
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
   .nav-section { background-color: #fff; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
   h2 { color: #444; margin-top: 0; }
   p { font-size: 18px; line-height: 1.6; }
-  .btn {
-    display: inline-block;
-    padding: 8px 16px;
-    margin: 5px 5px 10px 0;
-    font-size: 16px;
-    color: #fff;
-    background-color: #0066cc;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
+  .btn { display: inline-block; padding: 8px 16px; margin: 5px 5px 10px 0; font-size: 16px; color: #fff;
+    background-color: #0066cc; border: none; border-radius: 5px; text-decoration: none; cursor: pointer;
     transition: background-color 0.3s;
   }
   .btn:hover { background-color: #004999; }
@@ -124,23 +95,17 @@
       <h2>购买加速器教程</h2>
       <p>按照以下步骤完成加速器安装：</p>
 
-      <!-- 按钮在顶部 -->
       <a href="https://www.any81.com" target="_blank" class="btn">点击这里下载推荐加速器</a>
       <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">点击这里直接安装</a>
 
-      <!-- 步骤1 -->
       <div class="tutorial-step">
         <p>步骤一：点击右上角三条横线</p>
         <img src="images/jiasuqi1.png" alt="步骤一：点击右上角三条横线">
       </div>
-
-      <!-- 步骤2 -->
       <div class="tutorial-step">
         <p>步骤二：点击下载</p>
         <img src="images/jiasuqi2.png" alt="步骤二：点击下载">
       </div>
-
-      <!-- 步骤3 -->
       <div class="tutorial-step">
         <p>步骤三：选择自己的手机型号对应下载，苹果选择 IOS，安卓选择 Android</p>
         <img src="images/jiasuqi3.png" alt="步骤三：选择自己的手机型号">
@@ -163,22 +128,24 @@
       <h2>苹果手机海外ID教程</h2>
       <p>购买海外账号通常更容易登录且更稳定；免费的账号存在登录失败风险。购买海外 Apple ID 后，在手机 App Store 使用该账号登录；登录成功后即可下载下列应用。</p>
 
+      <!-- 按钮放顶部 -->
       <a href="https://m.bigplayers.com/detail/303?inviteCode=B0004609" target="_blank" class="btn">购买海外ID</a>
       <a href="https://www.any2388.com/#/installGuide" target="_blank" class="btn">免费获取海外ID</a>
 
+      <!-- 图片与说明 -->
       <div class="tutorial-step">
-        <img src="images/feiji1.png" alt="下载聊天软件">
         <p>1. 在App Store 搜索 Telegram 并下载</p>
+        <img src="images/feiji1.png" alt="下载聊天软件">
       </div>
 
       <div class="tutorial-step">
-        <img src="images/vpn1.png" alt="下载加速器">
         <p>2. 在App Store 搜索 Anycast 并下载</p>
+        <img src="images/vpn1.png" alt="下载加速器">
       </div>
 
       <div class="tutorial-step">
-        <img src="images/liulanqi1.png" alt="下载浏览器">
         <p>3. 在App Store 搜索 Google Chrome 并下载（Egdg 作为备用浏览器）</p>
+        <img src="images/liulanqi1.png" alt="下载浏览器">
       </div>
 
       <div class="tutorial-step">
@@ -186,13 +153,13 @@
       </div>
 
       <div class="tutorial-step">
-        <img src="images/ouyi1.png" alt="下载交易软件">
         <p>5. 在App Store 搜索 欧易 或 OKX 并下载，Binance（币安可作备用）</p>
+        <img src="images/ouyi1.png" alt="下载交易软件">
       </div>
 
       <div class="tutorial-step">
-        <img src="images/lengqianbao1.png" alt="下载冷钱包">
         <p>6. 在App Store 搜索 imToken 并下载（冷钱包，可下载备用）</p>
+        <img src="images/lengqianbao1.png" alt="下载冷钱包">
       </div>
     </div>
   </div>
@@ -211,6 +178,7 @@ function openTab(evt, tabName) {
 
 </body>
 </html>
+
 
 
 

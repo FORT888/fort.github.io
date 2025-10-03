@@ -45,29 +45,13 @@
     100% { transform: translateX(-100%); }
   }
 
-  .logo {
-    height: 140px;
-    margin-top: 10px;
-    z-index: 1;
-  }
+  .logo { height: 120px; margin-top: 10px; z-index: 1; }
 
   /* 标签切换按钮 */
-  .tab {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 10px 0;
-    gap: 10px;
-  }
+  .tab { display: flex; justify-content: center; flex-wrap: wrap; margin: 10px 0; gap: 10px; }
   .tab button {
-    padding: 8px 16px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #0066cc;
-    color: #fff;
-    transition: background-color 0.3s;
+    padding: 8px 16px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;
+    background-color: #0066cc; color: #fff; transition: background-color 0.3s;
   }
   .tab button.active, .tab button:hover { background-color: #004999; }
 
@@ -75,35 +59,28 @@
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
-  .nav-section { background-color: #fff; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+  .nav-section { background-color: #fff; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
   h2 { color: #444; margin-top: 0; }
   p { font-size: 18px; line-height: 1.6; }
-
-  /* 按钮组自适应缩放 */
-  .btn-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  .btn-group .btn {
+  
+  /* 按钮自适应缩放 */
+  .btn-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+  .btn {
     flex: 1 1 auto;
     min-width: 120px;
-    max-width: 250px;
-    text-align: center;
-    display: inline-block;
-    padding: 8px 16px;
+    max-width: 100%;
+    padding: 8px 12px;
     font-size: 16px;
     color: #fff;
     background-color: #0066cc;
     border: none;
     border-radius: 5px;
     text-decoration: none;
+    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  .btn-group .btn:hover { background-color: #004999; }
+  .btn:hover { background-color: #004999; }
 
   img { max-width: 100%; height: auto; margin-top: 10px; }
   .tutorial-step { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
@@ -135,7 +112,6 @@
   <div id="accelerator" class="tab-content active">
     <div class="nav-section">
       <h2>购买加速器教程</h2>
-
       <div class="btn-group">
         <a href="https://www.any81.com" target="_blank" class="btn">点击这里下载推荐加速器</a>
         <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">点击这里直接安装</a>
@@ -143,15 +119,15 @@
 
       <div class="tutorial-step">
         <p>步骤一：点击右上角三条横线</p>
-        <img src="images/jiasuqi1.png" alt="步骤一">
+        <img src="images/jiasuqi1.png" alt="步骤一：点击右上角三条横线">
       </div>
       <div class="tutorial-step">
         <p>步骤二：点击下载</p>
-        <img src="images/jiasuqi2.png" alt="步骤二">
+        <img src="images/jiasuqi2.png" alt="步骤二：点击下载">
       </div>
       <div class="tutorial-step">
         <p>步骤三：选择自己的手机型号对应下载，苹果选择 IOS，安卓选择 Android</p>
-        <img src="images/jiasuqi3.png" alt="步骤三">
+        <img src="images/jiasuqi3.png" alt="步骤三：选择自己的手机型号">
       </div>
     </div>
   </div>
@@ -209,7 +185,7 @@
         <a href="https://www.okx.com/zh-hans" target="_blank" class="btn">欧易官网</a>
         <a href="http://static.dejiz.com/upgradeapp/android.apk" target="_blank" class="btn">点击这里直接下载</a>
         <a href="https://www.okx.com/zh-hans/help/how-do-i-verify-an-individual-account" target="_blank" class="btn">怎么进行实名认证？</a>
-        <a href="https://www.okx.com/zh-hans/help/how-to-buy-crypto-on-okx-p2p-trading" target="_blank" class="btn">如何快捷买卖币？</a>
+        <a href="https://www.okx.com/zh-hans/help/how-do-i-buy-crypto-on-okx-p2p-trading" target="_blank" class="btn">如何快捷买卖币？</a>
         <a href="https://www.okx.com/zh-hans/help/why-can-not-you-pay-when-buying-cryptos" target="_blank" class="btn">买币遇到风控怎么办？</a>
         <a href="https://www.okx.com/zh-hans/help/what-should-i-do-if-facial-recognition-cannot-pass" target="_blank" class="btn">人脸识别无法通过怎么办？</a>
         <a href="https://www.okx.com/zh-hans/help/i-have-not-received-the-sms-code" target="_blank" class="btn">验证码收不到怎么办？</a>
@@ -252,6 +228,7 @@ function openTab(evt, tabName) {
 
 </body>
 </html>
+
 
 
 

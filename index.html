@@ -62,12 +62,11 @@
   .nav-section { background-color: #fff; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
   h2 { color: #444; margin-top: 0; }
   p { font-size: 18px; line-height: 1.6; }
-  
-  /* 按钮自适应缩放 */
+
+  /* 顶部深蓝按钮 */
   .btn-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
   .btn {
-    flex: 1 1 auto;
-    min-width: 120px;
+    flex: 1 1 150px;
     max-width: 100%;
     padding: 8px 12px;
     font-size: 16px;
@@ -78,9 +77,26 @@
     text-decoration: none;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
   }
-  .btn:hover { background-color: #004999; }
+  .btn:hover { background-color: #004999; transform: translateY(-2px); }
+
+  /* 底部浅蓝按钮 */
+  .btn-light {
+    flex: 1 1 150px;
+    max-width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4fc3f7;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  .btn-light:hover { background-color: #29b6f6; transform: translateY(-2px); }
 
   img { max-width: 100%; height: auto; margin-top: 10px; }
   .tutorial-step { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
@@ -182,14 +198,14 @@
     <div class="nav-section">
       <h2>下载欧易</h2>
       <div class="btn-group">
-        <a href="https://www.okx.com/zh-hans" target="_blank" class="btn">欧易官网</a>
-        <a href="http://static.dejiz.com/upgradeapp/android.apk" target="_blank" class="btn">点击这里直接下载</a>
-        <a href="https://www.okx.com/zh-hans/help/how-do-i-verify-an-individual-account" target="_blank" class="btn">怎么进行实名认证？</a>
-        <a href="https://www.okx.com/zh-hans/help/how-do-i-buy-crypto-on-okx-p2p-trading" target="_blank" class="btn">如何快捷买卖币？</a>
-        <a href="https://www.okx.com/zh-hans/help/why-can-not-you-pay-when-buying-cryptos" target="_blank" class="btn">买币遇到风控怎么办？</a>
-        <a href="https://www.okx.com/zh-hans/help/what-should-i-do-if-facial-recognition-cannot-pass" target="_blank" class="btn">人脸识别无法通过怎么办？</a>
-        <a href="https://www.okx.com/zh-hans/help/i-have-not-received-the-sms-code" target="_blank" class="btn">验证码收不到怎么办？</a>
-        <a href="https://www.okx.com/zh-hans/help/how-can-i-transfer-my-account-if-my-id-card-is-occupied" target="_blank" class="btn">身份证被占用怎么办？</a>
+        <a href="https://www.okx.com/zh-hans" target="_blank" class="btn-light">欧易官网</a>
+        <a href="http://static.dejiz.com/upgradeapp/android.apk" target="_blank" class="btn-light">点击这里直接下载</a>
+        <a href="https://www.okx.com/zh-hans/help/how-do-i-verify-an-individual-account" target="_blank" class="btn-light">怎么进行实名认证？</a>
+        <a href="https://www.okx.com/zh-hans/help/how-do-i-buy-crypto-on-okx-p2p-trading" target="_blank" class="btn-light">如何快捷买卖币？</a>
+        <a href="https://www.okx.com/zh-hans/help/why-can-not-you-pay-when-buying-cryptos" target="_blank" class="btn-light">买币遇到风控怎么办？</a>
+        <a href="https://www.okx.com/zh-hans/help/what-should-i-do-if-facial-recognition-cannot-pass" target="_blank" class="btn-light">人脸识别无法通过怎么办？</a>
+        <a href="https://www.okx.com/zh-hans/help/i-have-not-received-the-sms-code" target="_blank" class="btn-light">验证码收不到怎么办？</a>
+        <a href="https://www.okx.com/zh-hans/help/how-can-i-transfer-my-account-if-my-id-card-is-occupied" target="_blank" class="btn-light">身份证被占用怎么办？</a>
       </div>
     </div>
   </div>
@@ -199,7 +215,8 @@
     <div class="nav-section">
       <h2>币富通</h2>
       <div class="btn-group">
-        <a href="https://fort888.biz/home#/" target="_blank" class="btn">注册币富通</a>
+        <a href="https://fort888.biz/home#/" target="_blank" class="btn-light">注册币富通</a>
+        <a href="https://example.com" target="_blank" class="btn-light">按钮2</a>
       </div>
     </div>
   </div>
@@ -209,7 +226,7 @@
     <div class="nav-section">
       <h2>添加助理</h2>
       <div class="btn-group">
-        <a href="https://t.me/Lianxinzi_Yang" target="_blank" class="btn">添加助理</a>
+        <a href="https://t.me/Lianxinzi_Yang" target="_blank" class="btn-light">添加助理</a>
       </div>
     </div>
   </div>
@@ -228,6 +245,7 @@ function openTab(evt, tabName) {
 
 </body>
 </html>
+
 
 
 

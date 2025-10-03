@@ -20,6 +20,7 @@
     overflow: hidden;
   }
 
+  /* 滚动文字容器 */
   .scroll-container {
     width: 100%;
     height: 50px;
@@ -45,13 +46,30 @@
     100% { transform: translateX(-100%); }
   }
 
-  .logo { height: 120px; margin-top: 10px; z-index: 1; }
+  /* logo 在下方，不遮挡文字 */
+  .logo {
+    height: 120px;
+    margin-top: 10px;
+    z-index: 1;
+  }
 
   /* 标签切换按钮 */
-  .tab { display: flex; justify-content: center; flex-wrap: wrap; margin: 10px 0; gap: 10px; }
+  .tab {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    gap: 10px;
+  }
   .tab button {
-    padding: 8px 16px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;
-    background-color: #0066cc; color: #fff; transition: background-color 0.3s;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0066cc;
+    color: #fff;
+    transition: background-color 0.3s;
   }
   .tab button.active, .tab button:hover { background-color: #004999; }
 
@@ -59,26 +77,26 @@
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
-  .nav-section { background-color: #fff; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .nav-section { background-color: #fff; padding: 20px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
   h2 { color: #444; margin-top: 0; }
   p { font-size: 18px; line-height: 1.6; }
-  
-  /* 按钮自适应缩放 */
-  .btn-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+
+  /* 按钮组自适应换行 */
+  .btn-group { display: flex; flex-wrap: wrap; gap: 5px; }
+
   .btn {
-    flex: 1 1 auto;
-    min-width: 120px;
-    max-width: 100%;
-    padding: 8px 12px;
+    display: inline-block;
+    padding: 8px 16px;
     font-size: 16px;
     color: #fff;
     background-color: #0066cc;
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
+    flex: 1 1 auto;
+    text-align: center;
   }
   .btn:hover { background-color: #004999; }
 
@@ -112,11 +130,14 @@
   <div id="accelerator" class="tab-content active">
     <div class="nav-section">
       <h2>购买加速器教程</h2>
+
+      <!-- 顶部按钮 -->
       <div class="btn-group">
         <a href="https://www.any81.com" target="_blank" class="btn">点击这里下载推荐加速器</a>
         <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn">点击这里直接安装</a>
       </div>
 
+      <!-- 步骤图片和说明 -->
       <div class="tutorial-step">
         <p>步骤一：点击右上角三条横线</p>
         <img src="images/jiasuqi1.png" alt="步骤一：点击右上角三条横线">
@@ -147,12 +168,15 @@
   <div id="appleid" class="tab-content">
     <div class="nav-section">
       <h2>苹果手机教程</h2>
+
+      <!-- 顶部按钮 -->
       <div class="btn-group">
         <a href="https://m.bigplayers.com/detail/303?inviteCode=B0004609" target="_blank" class="btn">购买海外ID</a>
         <a href="https://www.any2388.com/#/installGuide" target="_blank" class="btn">免费获取海外ID</a>
         <a href="https://www.okx.com/zh-hans/help/how-to-download-okx-app-on-iphone" target="_blank" class="btn">如何自己注册海外ID？</a>
       </div>
 
+      <!-- 步骤图片和说明 -->
       <div class="tutorial-step">
         <p>1. 在App Store 搜索 Telegram 并下载</p>
         <img src="images/feiji1.png" alt="下载聊天软件">
@@ -200,6 +224,7 @@
       <h2>币富通</h2>
       <div class="btn-group">
         <a href="https://fort888.biz/home#/" target="_blank" class="btn">注册币富通</a>
+        <a href="https://www.kdocs.cn/l/cruZjWLWRk4Z" target="_blank" class="btn">币富通简介</a>
       </div>
     </div>
   </div>
@@ -228,6 +253,7 @@ function openTab(evt, tabName) {
 
 </body>
 </html>
+
 
 
 

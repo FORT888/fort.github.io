@@ -5,24 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>聯信資財富導航</title>
 <style>
-body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background-color:#0d1117; margin:0; padding:0; color:#eaf5ff; }
+body {
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  background-color:#0d1117;
+  margin:0;
+  padding:0;
+  color:#eaf5ff;
+  transform:translateY(-10px); /* 整页上移一点 */
+}
 
 /* 顶部 */
 .top-background {
   background: radial-gradient(circle at 50% 30%, rgba(56,189,248,0.12), transparent 70%), #0d1117;
-  height: 240px;
+  height: 230px; /* 稍微降低一点，让 LOGO 贴近标题 */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 10px;
+  padding-top: 5px;
   overflow: hidden;
+  position: relative;
 }
 
 /* 滚动标题 */
 .scroll-container { width:100%; height:40px; overflow:hidden; }
 .scroll-title {
-  font-size:28px; font-weight:700;
+  font-size:28px;
+  font-weight:700;
   background:linear-gradient(to right,#6ee7ff,#2ea3f0);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -32,29 +41,65 @@ body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background-color:
 }
 @keyframes scrollText { 0%{transform:translateX(100%);} 100%{transform:translateX(-100%);} }
 
-/* LOGO */
+/* LOGO + 动态星星 */
 .logo {
-  margin-top:25px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position: relative;
+  margin-top: 45px; /* LOGO上移贴近标题 */
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .logo img {
   width:150px;
   height:auto;
   mix-blend-mode:screen;
+  z-index:2;
+}
+
+/* 星点柔光 */
+.star {
+  position:absolute;
+  background:radial-gradient(circle, rgba(255,255,255,0.9), transparent 70%);
+  border-radius:50%;
+  opacity:0.8;
+  animation:twinkle 4s ease-in-out infinite;
+  z-index:1;
+}
+.star:nth-child(1){width:6px;height:6px;top:20%;left:60%;animation-delay:0s;}
+.star:nth-child(2){width:4px;height:4px;top:60%;left:30%;animation-delay:1s;}
+.star:nth-child(3){width:5px;height:5px;top:40%;left:75%;animation-delay:2s;}
+.star:nth-child(4){width:3px;height:3px;top:70%;left:50%;animation-delay:3s;}
+@keyframes twinkle {
+  0%,100%{opacity:0.3;transform:scale(1);}
+  50%{opacity:1;transform:scale(1.4);}
 }
 
 /* 导航栏 */
-.tab { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin:20px 10px; }
+.tab {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:15px 10px; /* 整体稍上移 */
+}
 .tab button {
-  padding:8px 15px; border:1px solid rgba(255,255,255,0.08); border-radius:25px;
-  background:transparent; color:#eaf5ff; font-weight:500; font-size:14px; cursor:pointer;
+  padding:8px 15px;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:25px;
+  background:transparent;
+  color:#eaf5ff;
+  font-weight:500;
+  font-size:14px;
+  cursor:pointer;
   transition:all 0.3s ease;
 }
 .tab button:hover { color:#39bdf8; }
 .tab button.active {
-  background:linear-gradient(135deg,#2ea3f0,#0277bd); color:#fff; border:none;
+  background:linear-gradient(135deg,#2ea3f0,#0277bd);
+  color:#fff;
+  border:none;
   box-shadow:0 0 8px rgba(14,165,233,0.4);
 }
 
@@ -64,12 +109,13 @@ body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background-color:
 .nav-section {
   background-color:#161b22;
   border-radius:10px;
-  margin:16px;
+  margin:14px;
   padding:22px 14px 28px;
   box-shadow:0 4px 25px rgba(0,0,0,0.45);
 }
 .nav-section h2 {
-  font-size:19px; font-weight:700;
+  font-size:19px;
+  font-weight:700;
   background:linear-gradient(to right,#9be5ff,#47a8ff);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -77,7 +123,7 @@ body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background-color:
   margin-bottom:18px;
 }
 
-/* 动态按钮（带箭头） */
+/* 动态箭头按钮 */
 .btn-group { display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
 .btn-light {
   position:relative;
@@ -149,7 +195,10 @@ img { max-width:100%; border-radius:8px; margin-top:10px; box-shadow:0 0 10px rg
 
 <div class="top-background">
   <div class="scroll-container"><div class="scroll-title">聯信資財富導航</div></div>
-  <div class="logo"><img src="images/logo.png" alt="logo"></div>
+  <div class="logo">
+    <img src="images/logo.png" alt="logo">
+    <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+  </div>
 </div>
 
 <div class="tab">

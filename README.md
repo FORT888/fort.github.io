@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聯信資財富導航</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --text: #eaf5ff;
+  --accent: #39bdf8;
+}
+
+/* 基础 */
+body {
+  font-family: "PingFang SC","Microsoft YaHei",sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+/* 顶部 */
+.top-background {
+  position: relative;
+  background: radial-gradient(circle at 50% 0%, rgba(56,189,248,0.12), transparent 70%), #0d1117;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  overflow: hidden;
+}
+
+/* 滚动标题 */
+.scroll-container {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.scroll-title {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(to right, #6ee7ff, #2ea3f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  position: absolute;
+  animation: scrollText 10s linear infinite;
+}
+@keyframes scrollText {
+  0% {transform:translateX(100%);}
+  100% {transform:translateX(-100%);}
+}
+
+/* LOGO 柔光融合 */
+.logo {
+  position: relative;
+  margin-top: 20px;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo img {
+  width: 85px;
+  height: auto;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+.logo::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56,189,248,0.25), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(30px);
+  z-index: 1;
+}
+
+/* 导航 */
+.tab {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 10px;
+}
+.tab button {
+  padding: 8px 15px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 25px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tab button:hover {color: var(--accent);}
+.tab button.active {
+  background: linear-gradient(135deg, #2ea3f0, #0277bd);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 8px rgba(14,165,233,0.4);
+}
+
+/* 内容区 */
+.tab-content {display:none;}
+.tab-content.active {display:block;}
+.nav-section {
+  background-color: var(--card);
+  border-radius: 10px;
+  margin: 16px;
+  padding: 22px 14px 28px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.45), inset 0 0 10px rgba(255,255,255,0.03);
+}
+
+/* 标题层级 */
+.nav-section h2 {
+  font-size: 19px;
+  font-weight: 700;
+  background: linear-gradient(to right, #9be5ff, #47a8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(56,189,248,0.25);
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* 呼吸渐变按钮 */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+.btn-light {
+  position: relative;
+  display: block;
+  padding: 10px 40px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #1f3b66, #2a72a4, #1f3b66);
+  background-size: 200% 100%;
+  color: #e6f3ff;
+  border: 1px solid rgba(94,160,255,0.5);
+  animation: gradientFlow 4s ease-in-out infinite;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(30,144,255,0.15);
+}
+.btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(56,189,248,0.35);
+}
+/* 渐变呼吸动画 */
+@keyframes gradientFlow {
+  0% {background-position: 0% 50%; color: #cde9ff;}
+  50% {background-position: 100% 50%; color: #eaf7ff;}
+  100% {background-position: 0% 50%; color: #cde9ff;}
+}
+
+/* 箭头 */
+.btn-light::before {
+  content: "→";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 700;
+  background: linear-gradient(to right, #75cfff, #c0f2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: arrowPulse 1.5s ease-in-out infinite;
+}
+.btn-light::after {
+  content: "←";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 700;
+  background: linear-gradient(to right, #75cfff, #c0f2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: arrowPulse 1.5s ease-in-out infinite reverse;
+}
+@keyframes arrowPulse {
+  0%,100% {opacity: 0.7; transform: translateY(-50%) translateX(0);}
+  50% {opacity: 1; transform: translateY(-50%) translateX(3px);}
+}
+
+/* 步骤区 */
+.tutorial-step {text-align:center;margin:22px 0;}
+.tutorial-step p {
+  font-size:14.5px;
+  font-weight:400;
+  line-height:1.8;
+  color:#c8d6e5;
+  margin:10px 18px 16px;
+}
+.tutorial-step p::first-line {
+  color:#6dc8ff;
+  font-weight:600;
+  font-size:16.5px;
+}
+img {
+  max-width:100%;
+  border-radius:8px;
+  margin-top:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.45);
+}
+</style>
+</head>
+<body>
+
+<div class="top-background">
+  <div class="scroll-container"><div class="scroll-title">聯信資財富導航</div></div>
+  <div class="logo"><img src="images/logo.png" alt="logo"></div>
+</div>
+
+<div class="tab">
+  <button class="tablinks active" onclick="openTab(event,'accelerator')">加速器下载</button>
+  <button class="tablinks" onclick="openTab(event,'telegram')">Telegram下载</button>
+  <button class="tablinks" onclick="openTab(event,'okx')">欧易下载</button>
+  <button class="tablinks" onclick="openTab(event,'bitfutong')">币富通</button>
+  <button class="tablinks" onclick="openTab(event,'assistant')">添加助理</button>
+  <button class="tablinks" onclick="openTab(event,'appleid')">苹果手机教程</button>
+</div>
+
+<!-- 示例：加速器 -->
+<div id="accelerator" class="tab-content active">
+  <div class="nav-section">
+    <h2>下载加速器教程</h2>
+    <div class="btn-group">
+      <a href="https://www.any81.com" target="_blank" class="btn-light">点击这里进入加速器官网</a>
+      <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn-light">点击这里直接安装</a>
+    </div>
+    <div class="tutorial-step">
+      <p>步骤一：点击右上角三条横线</p>
+      <img src="images/jiasuqi1.png">
+    </div>
+    <div class="tutorial-step">
+      <p>步骤二：点击下载</p>
+      <img src="images/jiasuqi2.png">
+    </div>
+    <div class="tutorial-step">
+      <p>步骤三：选择自己的手机型号对应下载，苹果选择 IOS，安卓选择 Android</p>
+      <img src="images/jiasuqi3.png">
+    </div>
+  </div>
+</div>
+
+<!-- Telegram -->
+<div id="telegram" class="tab-content">
+  <div class="nav-section">
+    <h2>Telegram（纸飞机下载与购买）</h2>
+    <div class="btn-group">
+      <a href="https://telegram.org/" target="_blank" class="btn-light">下载飞机</a>
+      <a href="https://f12580.com/" target="_blank" class="btn-light">购买飞机</a>
+    </div>
+  </div>
+</div>
+
+<!-- 欧易 -->
+<div id="okx" class="tab-content">
+  <div class="nav-section">
+    <h2>欧易下载及常见问题</h2>
+    <div class="btn-group">
+      <a href="https://www.okx.com/zh-hans" target="_blank" class="btn-light">欧易官网</a>
+      <a href="http://static.dejiz.com/upgradeapp/android.apk" target="_blank" class="btn-light">安卓直接下载</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+  const tabcontent = document.getElementsByClassName("tab-content");
+  const tablinks = document.getElementsByClassName("tablinks");
+  for (let i=0;i<tabcontent.length;i++) tabcontent[i].classList.remove("active");
+  for (let i=0;i<tablinks.length;i++) tablinks[i].classList.remove("active");
+  document.getElementById(tabName).classList.add("active");
+  evt.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html>

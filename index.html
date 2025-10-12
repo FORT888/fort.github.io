@@ -56,13 +56,17 @@
     100% { transform: translateX(-100%); }
   }
 
-  /* LOGO 修复 */
+  /* LOGO（无边框干净版） */
   .logo {
     height: 90px;
     margin-top: 15px;
-    filter: drop-shadow(0 0 15px rgba(56,189,248,0.45));
+    display: block;
     border: none;
     background: none;
+    filter: drop-shadow(0 0 10px rgba(56,189,248,0.4));
+    mix-blend-mode: normal;
+    isolation: isolate;
+    image-rendering: -webkit-optimize-contrast;
   }
 
   /* 标签导航 */
@@ -230,12 +234,12 @@
   <button class="tablinks" onclick="openTab(event,'appleid')">苹果手机教程</button>
 </div>
 
-<!-- 加速器 -->
+<!-- 示例模块：加速器 -->
 <div id="accelerator" class="tab-content active">
   <div class="nav-section">
     <h2>下载加速器教程</h2>
     <div class="btn-group">
-      <a href="https://www.any81.com" target="_blank" class="btn-light">点击这里下载推荐加速器</a>
+      <a href="https://www.any81.com" target="_blank" class="btn-light">点击这里进入加速器官网</a>
       <a href="https://client.alioss.net/anycast.apk" target="_blank" class="btn-light">点击这里直接安装</a>
     </div>
     <div class="tutorial-step">
@@ -253,9 +257,6 @@
   </div>
 </div>
 
-<!-- 其他模块照旧，可继续添加 -->
-<!-- Telegram / 欧易 / 币富通 / 助理 / 苹果教程 -->
-
 <script>
 function openTab(evt, tabName) {
   var tabcontent = document.getElementsByClassName("tab-content");
@@ -269,4 +270,5 @@ function openTab(evt, tabName) {
 
 </body>
 </html>
+
 

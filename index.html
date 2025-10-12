@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>聯信資財富導航</title>
 <style>
-  /* ===== 全局色系：深色高端金融风 ===== */
+  /* ===== 深色高端金融风全局样式 ===== */
   :root {
     --bg: #0d1117;
     --card: #161b22;
@@ -66,7 +66,7 @@
     filter: drop-shadow(0 0 12px rgba(56,189,248,0.3));
   }
 
-  /* ===== 导航标签 ===== */
+  /* ===== 导航按钮 ===== */
   .tab {
     display: flex;
     justify-content: center;
@@ -126,7 +126,7 @@
     color: var(--text);
   }
 
-  /* ===== 按钮组（细金线轻奢风） ===== */
+  /* ===== 按钮组 + 动态箭头 ===== */
   .btn-group {
     display: flex;
     flex-wrap: wrap;
@@ -136,6 +136,7 @@
   }
 
   .btn-light {
+    position: relative;
     flex: 1 1 180px;
     max-width: 100%;
     padding: 10px 14px;
@@ -152,6 +153,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    overflow: hidden;
   }
 
   .btn-light:hover {
@@ -162,7 +164,23 @@
     transform: translateY(-2px);
   }
 
-  /* ===== 教程步骤文字动画与符号 ===== */
+  .btn-light::after {
+    content: "➜";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17px;
+    animation: arrowWiggle 1.5s ease-in-out infinite;
+    opacity: 0.9;
+  }
+
+  @keyframes arrowWiggle {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(4px); }
+  }
+
+  /* ===== 教程步骤文字动画 ===== */
   .tutorial-step {
     text-align: center;
     margin-bottom: 20px;
@@ -350,4 +368,5 @@ function openTab(evt, tabName) {
 
 </body>
 </html>
+
 

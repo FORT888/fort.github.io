@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>聯信資財富導航</title>
 <style>
-  /* ===== 深色高端金融风全局样式 ===== */
+  /* ===== 深色高端金融风 ===== */
   :root {
     --bg: #0d1117;
     --card: #161b22;
@@ -126,7 +126,7 @@
     color: var(--text);
   }
 
-  /* ===== 按钮组 + 动态箭头 ===== */
+  /* ===== 按钮组（细金线+双箭头） ===== */
   .btn-group {
     display: flex;
     flex-wrap: wrap;
@@ -139,7 +139,7 @@
     position: relative;
     flex: 1 1 180px;
     max-width: 100%;
-    padding: 10px 14px;
+    padding: 10px 42px;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.4px;
@@ -164,20 +164,36 @@
     transform: translateY(-2px);
   }
 
-  .btn-light::after {
-    content: "➜";
+  .btn-light::before {
+    content: "→";
     position: absolute;
-    right: 10px;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 17px;
-    animation: arrowWiggle 1.5s ease-in-out infinite;
-    opacity: 0.9;
+    font-size: 18px;
+    opacity: .9;
+    animation: arrowLeft 1.5s ease-in-out infinite;
   }
 
-  @keyframes arrowWiggle {
-    0%, 100% { transform: translateY(-50%) translateX(0); }
-    50% { transform: translateY(-50%) translateX(4px); }
+  .btn-light::after {
+    content: "←";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    opacity: .9;
+    animation: arrowRight 1.5s ease-in-out infinite;
+  }
+
+  @keyframes arrowLeft {
+    0%,100% { transform: translateY(-50%) translateX(0); }
+    50%     { transform: translateY(-50%) translateX(4px); }
+  }
+
+  @keyframes arrowRight {
+    0%,100% { transform: translateY(-50%) translateX(0); }
+    50%     { transform: translateY(-50%) translateX(-4px); }
   }
 
   /* ===== 教程步骤文字动画 ===== */
@@ -236,7 +252,7 @@
   <button class="tablinks" onclick="openTab(event,'appleid')">苹果手机教程</button>
 </div>
 
-<!-- ===== 导航1：加速器下载 ===== -->
+<!-- ===== 导航内容区域 ===== -->
 <div id="accelerator" class="tab-content active">
   <div class="nav-section">
     <h2>下载加速器教程</h2>
@@ -259,7 +275,6 @@
   </div>
 </div>
 
-<!-- ===== 导航2：Telegram下载 ===== -->
 <div id="telegram" class="tab-content">
   <div class="nav-section">
     <h2>Telegram（纸飞机下载与购买）</h2>
@@ -267,22 +282,12 @@
       <a href="https://telegram.org/" target="_blank" class="btn-light">下载飞机</a>
       <a href="https://f12580.com/" target="_blank" class="btn-light">购买飞机</a>
     </div>
-    <div class="tutorial-step">
-      <p>步骤一</p>
-      <img src="images/goumaifeiji.png" alt="步骤一">
-    </div>
-    <div class="tutorial-step">
-      <p>步骤二</p>
-      <img src="images/goumaifeiji2.png" alt="步骤二">
-    </div>
-    <div class="tutorial-step">
-      <p>步骤三</p>
-      <img src="images/goumaifeiji3.png" alt="步骤三">
-    </div>
+    <div class="tutorial-step"><p>步骤一</p><img src="images/goumaifeiji.png" alt=""></div>
+    <div class="tutorial-step"><p>步骤二</p><img src="images/goumaifeiji2.png" alt=""></div>
+    <div class="tutorial-step"><p>步骤三</p><img src="images/goumaifeiji3.png" alt=""></div>
   </div>
 </div>
 
-<!-- ===== 导航3：欧易下载 ===== -->
 <div id="okx" class="tab-content">
   <div class="nav-section">
     <h2>欧易下载及常见问题</h2>
@@ -299,7 +304,6 @@
   </div>
 </div>
 
-<!-- ===== 导航4：币富通 ===== -->
 <div id="bitfutong" class="tab-content">
   <div class="nav-section">
     <h2>币富通</h2>
@@ -310,7 +314,6 @@
   </div>
 </div>
 
-<!-- ===== 导航5：添加助理 ===== -->
 <div id="assistant" class="tab-content">
   <div class="nav-section">
     <h2>添加助理</h2>
@@ -321,7 +324,6 @@
   </div>
 </div>
 
-<!-- ===== 导航6：苹果手机教程 ===== -->
 <div id="appleid" class="tab-content">
   <div class="nav-section">
     <h2>苹果手机教程</h2>
@@ -331,27 +333,11 @@
       <a href="https://www.any2388.com/#/installGuide" target="_blank" class="btn-light">免费获取海外ID</a>
       <a href="https://www.okx.com/zh-hans/help/how-to-download-okx-app-on-iphone" target="_blank" class="btn-light">如何自己注册海外ID？</a>
     </div>
-    <div class="tutorial-step">
-      <p>1. 在App Store 搜索 Telegram 并下载</p>
-      <img src="images/feiji1.png" alt="下载聊天软件">
-    </div>
-    <div class="tutorial-step">
-      <p>2. 在App Store 搜索 Anycast 并下载</p>
-      <img src="images/vpn1.png" alt="下载加速器">
-    </div>
-    <div class="tutorial-step">
-      <p>3. 在App Store 搜索 Google Chrome 并下载（Egdg作为备用浏览器）</p>
-      <img src="images/liulanqi1.png" alt="下载浏览器">
-      <img src="images/liulanqi2.png" alt="备用浏览器">
-    </div>
-    <div class="tutorial-step">
-      <p>4. 在App Store 搜索欧易并下载，（Binance币安可作备用）</p>
-      <img src="images/ouyi1.png" alt="下载交易软件">
-    </div>
-    <div class="tutorial-step">
-      <p>5. 在App Store 搜索 imToken 并下载（冷钱包，可下载备用）</p>
-      <img src="images/lengqianbao1.png" alt="下载冷钱包">
-    </div>
+    <div class="tutorial-step"><p>1. 在App Store 搜索 Telegram 并下载</p><img src="images/feiji1.png" alt=""></div>
+    <div class="tutorial-step"><p>2. 在App Store 搜索 Anycast 并下载</p><img src="images/vpn1.png" alt=""></div>
+    <div class="tutorial-step"><p>3. 在App Store 搜索 Google Chrome 并下载（Egdg作为备用浏览器）</p><img src="images/liulanqi1.png" alt=""><img src="images/liulanqi2.png" alt=""></div>
+    <div class="tutorial-step"><p>4. 在App Store 搜索欧易并下载，（Binance币安可作备用）</p><img src="images/ouyi1.png" alt=""></div>
+    <div class="tutorial-step"><p>5. 在App Store 搜索 imToken 并下载（冷钱包，可下载备用）</p><img src="images/lengqianbao1.png" alt=""></div>
   </div>
 </div>
 
@@ -368,5 +354,3 @@ function openTab(evt, tabName) {
 
 </body>
 </html>
-
-

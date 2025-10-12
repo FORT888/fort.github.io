@@ -11,7 +11,7 @@ body {
   margin:0;
   padding:0;
   color:#eaf5ff;
-  transform:translateY(-25px); /* 再上移5px */
+  transform:translateY(-28px); /* 再上移3px */
 }
 
 /* 顶部 */
@@ -316,6 +316,3 @@ function openTab(evt, tabName) {
 
 </body>
 </html>
-
-
-

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>聯信資財富導航</title>
 <style>
-body { font-family: "PingFang SC","Microsoft YaHei",sans-serif; background-color:#0d1117; margin:0; padding:0; color:#eaf5ff; }
+body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background-color:#0d1117; margin:0; padding:0; color:#eaf5ff; }
 
 /* 顶部 */
 .top-background {
@@ -77,17 +77,69 @@ body { font-family: "PingFang SC","Microsoft YaHei",sans-serif; background-color
   margin-bottom:18px;
 }
 
-/* 按钮 */
+/* 动态按钮（带箭头） */
 .btn-group { display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
 .btn-light {
-  display:block; text-align:center; padding:10px 40px;
-  border-radius:10px; background:#1f3b66; color:#e6f3ff; border:1px solid rgba(94,160,255,0.5);
-  font-weight:600; font-size:15px; text-decoration:none !important;
-  transition:background 0.3s ease;
+  position:relative;
+  display:block;
+  text-align:center;
+  padding:10px 40px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#1f3b66,#2a72a4,#1f3b66);
+  background-size:200% 100%;
+  color:#e6f3ff;
+  border:1px solid rgba(94,160,255,0.5);
+  font-weight:600;
+  font-size:15px;
+  text-decoration:none !important;
+  animation:gradientFlow 4s ease-in-out infinite;
+  transition:all 0.3s ease;
+  overflow:hidden;
+  box-shadow:0 0 8px rgba(30,144,255,0.15);
 }
-.btn-light:hover { background:#2a72a4; }
+.btn-light:hover {
+  transform:translateY(-2px);
+  box-shadow:0 0 15px rgba(56,189,248,0.35);
+}
+@keyframes gradientFlow {
+  0% {background-position:0% 50%; color:#cde9ff;}
+  50% {background-position:100% 50%; color:#eaf7ff;}
+  100% {background-position:0% 50%; color:#cde9ff;}
+}
 
-/* 教程图片 */
+/* 动态渐变箭头 */
+.btn-light::before {
+  content:"→";
+  position:absolute;
+  left:10px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:16px;
+  font-weight:700;
+  background:linear-gradient(to right,#75cfff,#c0f2ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:arrowPulse 1.5s ease-in-out infinite;
+}
+.btn-light::after {
+  content:"←";
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:16px;
+  font-weight:700;
+  background:linear-gradient(to right,#75cfff,#c0f2ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:arrowPulse 1.5s ease-in-out infinite reverse;
+}
+@keyframes arrowPulse {
+  0%,100% {opacity:0.7; transform:translateY(-50%) translateX(0);}
+  50% {opacity:1; transform:translateY(-50%) translateX(3px);}
+}
+
+/* 图片 */
 .tutorial-step { text-align:center; margin:22px 0; }
 .tutorial-step p { font-size:15px; color:#c8d6e5; line-height:1.8; margin:10px 18px 16px; }
 img { max-width:100%; border-radius:8px; margin-top:10px; box-shadow:0 0 10px rgba(0,0,0,0.45); }

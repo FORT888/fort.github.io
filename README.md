@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 15px; /* 标题往下 */
+  padding-top: 45px; /* 往下移，避免贴顶 */
   overflow: hidden;
   position: relative;
 }
@@ -43,7 +43,7 @@ body {
 /* LOGO 与星星 */
 .logo {
   position: relative;
-  margin-top: 25px; /* 上移贴近标题 */
+  margin-top: 25px;
   width: 160px;
   height: 160px;
   display: flex;
@@ -179,7 +179,7 @@ body {
   50% {opacity:1; transform:translateY(-50%) translateX(3px);}
 }
 
-/* 教程步骤文字美化 */
+/* 教程步骤文字 */
 .tutorial-step {
   text-align:center;
   margin:22px 0;
@@ -221,7 +221,7 @@ img {
   <button class="tablinks" onclick="openTab(event,'appleid')">苹果手机教程</button>
 </div>
 
-<!-- ===== 加速器下载 ===== -->
+<!-- 以下为所有教程导航内容 -->
 <div id="accelerator" class="tab-content active">
   <div class="nav-section">
     <h2>下载加速器教程</h2>
@@ -235,7 +235,6 @@ img {
   </div>
 </div>
 
-<!-- ===== Telegram ===== -->
 <div id="telegram" class="tab-content">
   <div class="nav-section">
     <h2>Telegram（纸飞机下载与购买）</h2>
@@ -249,7 +248,6 @@ img {
   </div>
 </div>
 
-<!-- ===== 欧易下载 ===== -->
 <div id="okx" class="tab-content">
   <div class="nav-section">
     <h2>欧易下载及常见问题</h2>
@@ -266,7 +264,6 @@ img {
   </div>
 </div>
 
-<!-- ===== 币富通 ===== -->
 <div id="bitfutong" class="tab-content">
   <div class="nav-section">
     <h2>币富通</h2>
@@ -277,7 +274,6 @@ img {
   </div>
 </div>
 
-<!-- ===== 添加助理 ===== -->
 <div id="assistant" class="tab-content">
   <div class="nav-section">
     <h2>添加助理</h2>
@@ -288,7 +284,6 @@ img {
   </div>
 </div>
 
-<!-- ===== 苹果手机教程 ===== -->
 <div id="appleid" class="tab-content">
   <div class="nav-section">
     <h2>苹果手机教程</h2>
